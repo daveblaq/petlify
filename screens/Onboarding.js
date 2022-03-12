@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { View, Text, SafeAreaView, StyleSheet, Dimensions, ImageBackground, Platform } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, Dimensions, ImageBackground, Platform, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { FontAwesome, Feather } from "@expo/vector-icons";
 import COLORS from "./components/const/colors";
@@ -30,11 +30,11 @@ const slides = [
     id: 4,
     image: require("../assets/images/onboarding/onboarding-04.png"),
     title: "Pet Store",
-    subtitle: "Get a wide varieties of pet toys, food, and consumales",
+    subtitle: "Get a wide varieties of pet toys, food, and consumables",
   },
 ];
 
-const Onboarding = () => {
+const Onboarding = ({ navigation}) => {
 
 	 const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
    const ref = React.useRef();
@@ -86,14 +86,24 @@ const Onboarding = () => {
         ) : (
           <>
             <View style={styles.footer}>
-              <View style={styles.btnRow}>
-                <Feather name="arrow-left" size={20} color={COLORS.BTN_FADED} />
-                <Text style={styles.btnLeft}>SKIP</Text>
-              </View>
-              <View style={styles.btnRow}>
-                <Text style={styles.btnRight}>NEXT</Text>
-                <Feather name="arrow-right" size={20} color={COLORS.BASE} />
-              </View>
+              <TouchableOpacity>
+                <View style={styles.btnRow}>
+                  <Feather
+                    name="arrow-left"
+                    size={20}
+                    color={COLORS.BTN_FADED}
+                  />
+                  <Text style={styles.btnLeft}>SKIP</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Login")}
+              >
+                <View style={styles.btnRow}>
+                  <Text style={styles.btnRight}>NEXT</Text>
+                  <Feather name="arrow-right" size={20} color={COLORS.BASE} />
+                </View>
+              </TouchableOpacity>
             </View>
           </>
         )}
@@ -174,6 +184,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 20,
   },
   btnLeft: {
