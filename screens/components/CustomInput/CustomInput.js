@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#F2F4F7",
     marginTop: 16,
-    height: 50,
+    height: 60,
     paddingLeft: 15,
     paddingRight: 15,
     fontSize: Platform.OS == "ios" ? 14 : 16,

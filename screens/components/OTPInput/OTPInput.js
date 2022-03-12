@@ -42,24 +42,24 @@ const OTPInput = ({
 
 const styles = StyleSheet.create({
   container: {
-    
     marginVertical: 5,
+    padding: 20,
   },
 
   input: {
     backgroundColor: "#F2F4F7",
     marginTop: 10,
+
     height: 80,
     fontSize: Platform.OS == "ios" ? 20 : 24,
-	  fontWeight: "900",
-	  alignSelf: "center",
-	textAlign: "center",
+    fontWeight: "900",
+    alignSelf: "center",
+    textAlign: "center",
     borderRadius: 16,
     color: COLORS.DARK,
-	width: 80,
+    width: 80,
     borderWidth: 1,
   },
-  
 });
 
 export default OTPInput;

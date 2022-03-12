@@ -10,8 +10,6 @@ import {
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import COLORS from "./components/const/colors";
-import CustomInput from "./components/CustomInput/CustomInput";
-import CustomButton from "./components/CustomButton/CustomButton";
 import OTPInput from "./components/OTPInput/OTPInput";
 
 const VerifyOtp = ({ navigation }) => {
@@ -33,7 +31,7 @@ const VerifyOtp = ({ navigation }) => {
             Kindly enter the 4 (four) Digit pin sent to this number{" "}
             <Text style={{ fontWeight: "bold" }}>0812547896</Text>
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("KnowBetter")}>
             <Text style={styles.confirm}>
               Not your number?{" "}
               <Text style={{ fontWeight: "bold", color: COLORS.BASE }}>
@@ -63,10 +61,7 @@ const styles = StyleSheet.create({
 
     textAlign: "left",
   },
-  logo: {
-    color: COLORS.BASE,
-    fontSize: Platform.OS == "ios" ? 40 : 60,
-  },
+ 
   welcome: {
     paddingTop: 52,
     paddingBottom: 10,
@@ -88,20 +83,14 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   form: {
-    marginTop: 40,
-	  marginHorizontal: 25,
-	
-	},
-	inputContainer: {
-		flexDirection: "row",
-		justifyContent: "space-evenly",
+    marginTop: Platform.OS == "ios" ? 10 : 20,
+    marginHorizontal: 25,
   },
-  footerText: {
-    color: "#63687E",
-    fontSize: Platform.OS == "ios" ? 18 : 22,
-    marginTop: 30,
-    textAlign: "center",
+  inputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
+  
 });
 
 export default VerifyOtp;

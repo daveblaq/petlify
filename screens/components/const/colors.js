@@ -6,5 +6,8 @@ const COLORS = {
   FADED: "#90939B",
   BASE: "#FF006D",
   BTN_FADED: "#90939B",
+  BLUE_BG: "#D1F3FF",
+  RED_BG: "#FFE5EE",
+  BLUE: "#01BEFE",
 };
 export default COLORS;
