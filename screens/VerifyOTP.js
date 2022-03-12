@@ -12,8 +12,9 @@ import { StatusBar } from "expo-status-bar";
 import COLORS from "./components/const/colors";
 import CustomInput from "./components/CustomInput/CustomInput";
 import CustomButton from "./components/CustomButton/CustomButton";
+import OTPInput from "./components/OTPInput/OTPInput";
 
-const SignupTwo = ({ navigation }) => {
+const VerifyOtp = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
@@ -27,30 +28,27 @@ const SignupTwo = ({ navigation }) => {
         resizeMode="cover"
       >
         <View style={styles.container}>
-          <Text style={styles.welcome}>Welcome Khalid Rodriguez</Text>
+          <Text style={styles.welcome}>Verify your Account</Text>
           <Text style={styles.cta}>
-            Please enter an active phone number and email address
+            Kindly enter the 4 (four) Digit pin sent to this number{" "}
+            <Text style={{ fontWeight: "bold" }}>0812547896</Text>
           </Text>
-        </View>
-        <View style={styles.form}>
-          <CustomInput label="Email Address" placeholder="@example.com" />
-          <CustomInput label="Phone Number" placeholder="+234 80-352-8542" />
-          <CustomButton text="CREATE ACCOUNT" type="PRIMARY" onPress={ () => navigation.navigate("VerifyOTP")}/>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate("Login")}
-          >
-            <Text style={styles.footerText}>
-              Already have an account?{" "}
-              <Text
-                style={{
-                  color: COLORS.BASE,
-                }}
-              >
-                Sign in
+          <TouchableOpacity>
+            <Text style={styles.confirm}>
+              Not your number?{" "}
+              <Text style={{ fontWeight: "bold", color: COLORS.BASE }}>
+                Edit number
               </Text>
             </Text>
           </TouchableOpacity>
+        </View>
+        <View style={styles.form}>
+          <View style={styles.inputContainer}>
+            <OTPInput />
+            <OTPInput />
+            <OTPInput />
+            <OTPInput />
+          </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -82,9 +80,21 @@ const styles = StyleSheet.create({
     maxWidth: 357,
     lineHeight: 30,
   },
+  confirm: {
+    color: "#63687E",
+    fontSize: Platform.OS == "ios" ? 16 : 20,
+    paddingTop: 15,
+    maxWidth: 357,
+    lineHeight: 30,
+  },
   form: {
     marginTop: 40,
-    marginHorizontal: 25,
+	  marginHorizontal: 25,
+	
+	},
+	inputContainer: {
+		flexDirection: "row",
+		justifyContent: "space-evenly",
   },
   footerText: {
     color: "#63687E",
@@ -94,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignupTwo;
+export default VerifyOtp;

@@ -8,6 +8,7 @@ import Onboarding from "./screens/Onboarding";
 import Login from "./screens/Login";
 import SignupOne from "./screens/SignupOne";
 import SignupTwo from "./screens/SignupTwo";
+import VerifyOTP from "./screens/VerifyOTP";
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignupOne" component={SignupOne} />
         <Stack.Screen name="SignupTwo" component={SignupTwo} />
+        <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
