@@ -46,7 +46,7 @@ const CustomInput = ({
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    marginVertical: 5,
+    marginVertical: 10,
   },
 
   input: {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   label: {
-    paddingVertical: 5,
+    
     color: "#63687E",
     fontSize: Platform.OS == "ios" ? 16 : 18,
   },
