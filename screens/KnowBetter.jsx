@@ -53,7 +53,7 @@ const KnowBetter = ({ navigation }) => {
         <View style={styles.form}>
           <View>
             {items.map((item, i) => (
-               <SignupOption key={i} type={item.type} text={item.text} image={item.image} hex={item.hex} onPress={() => navigation.replace("HomeScreen")} />
+               <SignupOption key={i} type={item.type} text={item.text} image={item.image} hex={item.hex} onPress={() => navigation.replace("ErrorPage")} />
             ))}
            
            

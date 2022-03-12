@@ -10,6 +10,7 @@ import SignupOne from "./screens/SignupOne";
 import SignupTwo from "./screens/SignupTwo";
 import VerifyOTP from "./screens/VerifyOTP";
 import KnowBetter from "./screens/KnowBetter";
+import ErrorPage from "./screens/ErrorPage";
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <Stack.Screen name="SignupTwo" component={SignupTwo} />
         <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
         <Stack.Screen name="KnowBetter" component={KnowBetter} />
+        <Stack.Screen name="ErrorPage" component={ErrorPage} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -43,7 +43,7 @@ const OTPInput = ({
 const styles = StyleSheet.create({
   container: {
     marginVertical: 5,
-    padding: 20,
+    padding: 15,
   },
 
   input: {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     borderRadius: 16,
     color: COLORS.DARK,
-    width: 80,
+    width: 70,
     borderWidth: 1,
   },
 });
