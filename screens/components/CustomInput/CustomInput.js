@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, Platform } from "react-native";
 import COLORS from "../const/colors";
 
 const CustomInput = ({
@@ -7,13 +7,15 @@ const CustomInput = ({
   secureTextEntry,
   error,
   password,
-  onFocus = () => {},
+	onFocus = () => { },
+  label,
   ...props
 }) => {
   const [isFocused, setIsFocused] = React.useState(false);
 
   return (
-    <View style={styles.container}>
+	  <View style={styles.container}>
+		  <Text style={styles.label}>{label}</Text>
       <TextInput
         style={[
           styles.input,
@@ -49,15 +51,20 @@ const styles = StyleSheet.create({
 
   input: {
     backgroundColor: "#F2F4F7",
-    marginTop: 20,
+    marginTop: 16,
     height: 50,
     paddingLeft: 15,
     paddingRight: 15,
-    fontSize: 14,
+    fontSize: Platform.OS == "ios" ? 14 : 16,
     borderRadius: 20,
     color: COLORS.BTN_FADED,
 
-    borderWidth: 0.5,
+    borderWidth: 1,
+  },
+  label: {
+    paddingVertical: 5,
+    color: "#63687E",
+    fontSize: Platform.OS == "ios" ? 16 : 18,
   },
 });
 
