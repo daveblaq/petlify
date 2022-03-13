@@ -2,30 +2,32 @@ import React from "react";
 import { View, Text, TextInput, StyleSheet, Platform } from "react-native";
 import COLORS from "../const/colors";
 
-const CustomInput = ({
+const OTPInput = ({
   placeholder,
   secureTextEntry,
   error,
   password,
-	onFocus = () => { },
+  onFocus = () => {},
   label,
   ...props
 }) => {
   const [isFocused, setIsFocused] = React.useState(false);
 
   return (
-	  <View style={styles.container}>
-		  <Text style={styles.label}>{label}</Text>
+    <View style={styles.container}>
+     
       <TextInput
         style={[
           styles.input,
           {
             borderColor: error ? "red" : isFocused ? COLORS.BASE : "#fff",
           },
-        ]}
+			  ]}
+			
         placeholder={placeholder}
         placeholderTextColor="grey"
-        secureTextEntry={secureTextEntry}
+			  secureTextEntry={secureTextEntry}
+			  maxLength={1}
         autoCorrect={false}
         onFocus={() => {
           onFocus();
@@ -34,38 +36,31 @@ const CustomInput = ({
         onBlur={() => setIsFocused(false)}
         {...props}
       />
-      {error && (
-        <Text style={{ marginTop: 7, color: "red", fontSize: 12 }}>
-          {error}
-        </Text>
-      )}
+      
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    marginVertical: 10,
+    marginVertical: 5,
+    padding: 15,
   },
 
   input: {
     backgroundColor: "#F2F4F7",
-    marginTop: 16,
-    height: 60,
-    paddingLeft: 15,
-    paddingRight: 15,
-    fontSize: Platform.OS == "ios" ? 14 : 16,
-    borderRadius: 20,
-    color: COLORS.BTN_FADED,
+    marginTop: 10,
 
-    borderWidth: 1,
-  },
-  label: {
-    
-    color: "#63687E",
-    fontSize: Platform.OS == "ios" ? 16 : 18,
+    height: 80,
+    fontSize: Platform.OS == "ios" ? 20 : 24,
+    fontWeight: "900",
+    alignSelf: "center",
+    textAlign: "center",
+    borderRadius: 16,
+    color: COLORS.DARK,
+    width: 70,
+    borderWidth: 1.5,
   },
 });
 
-export default CustomInput;
+export default OTPInput;

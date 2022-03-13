@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 	container: {
 		height: Platform.OS == "ios" ? 80: 100,
 		width: '100%',
-		marginVertical: 15,
+		marginVertical: 16,
 		borderRadius: 16,
 		justifyContent: 'center',
 	},

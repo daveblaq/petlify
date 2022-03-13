@@ -56,7 +56,7 @@ const SignupOne = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 150,
+    marginTop: Platform.OS =="ios" ? 100 : 150,
     marginHorizontal: 25,
     justifyContent: "center",
     alignItems: "center",

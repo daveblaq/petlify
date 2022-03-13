@@ -11,7 +11,7 @@ const CustomButton = ({ onPress, text, type = "PRIMARY" }) => {
       onPress={onPress}
     >
       <Text style={styles[`text_${type}`]}>
-			  {text} {" "}<Ionicons name="ios-paw-outline" size={24} color="white" />
+			  {text} {" "}<Ionicons name="ios-paw-outline" size={22} color="white" />
       </Text>
     </TouchableOpacity>
   );

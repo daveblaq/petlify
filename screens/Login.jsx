@@ -49,7 +49,7 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 180,
+    marginTop: Platform.OS =="ios" ? 130 : 180,
     marginHorizontal: 25,
     justifyContent: "center",
     alignItems: "center",

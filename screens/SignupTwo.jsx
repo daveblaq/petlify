@@ -59,7 +59,7 @@ const SignupTwo = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS == "ios" ? 30 : 80,
+    marginTop: Platform.OS == "ios" ? 20 : 50,
     marginHorizontal: 25,
     justifyContent: "center",
 

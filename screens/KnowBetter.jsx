@@ -46,7 +46,7 @@ const KnowBetter = ({ navigation }) => {
         <View style={styles.container}>
           <Text style={styles.welcome}>Lets get to know you better !</Text>
           <Text style={styles.cta}>What would you used Petlify for?</Text>
-          <Divider horizontal={true} color={"#EBEDF1"} width={2} style={{ paddingVertical: 10,}} />
+          <Divider horizontal={true} color={"#EBEDF1"} width={1} style={{ paddingVertical: 10,}} />
           
        
         </View>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   form: {
-    marginTop: Platform.OS == "ios" ? 10 : 20,
+    marginTop: Platform.OS == "ios" ? 32 : 32,
     marginHorizontal: 25,
   },
   

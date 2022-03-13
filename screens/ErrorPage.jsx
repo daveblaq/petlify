@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { View, Text, SafeAreaView, StyleSheet, Dimensions, ImageBackground, Platform, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { FontAwesome, Feather } from "@expo/vector-icons";
+import { FontAwesome, Feather, Ionicons } from "@expo/vector-icons";
 import COLORS from "./components/const/colors";
 import FONTS from "./components/const/fonts";
 
@@ -61,12 +61,8 @@ const ErrorPage = ({ navigation}) => {
              <View style={styles.footer}>
               <TouchableOpacity>
                 <View style={styles.btnRow}>
-                  <Feather
-                    name="arrow-left"
-                    size={20}
-                    color={COLORS.DARK}
-                  />
-                  <Text style={styles.btnLeft}>TRY AGAIN</Text>
+                  <Ionicons name="refresh-outline" size={20} color={COLORS.DARK} />
+                  <Text style={styles.btnLeft}>{" "} TRY AGAIN</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
@@ -84,12 +80,8 @@ const ErrorPage = ({ navigation}) => {
             <View style={styles.footer}>
               <TouchableOpacity>
                 <View style={styles.btnRow}>
-                  <Feather
-                    name="arrow-left"
-                    size={20}
-                    color={COLORS.DARK}
-                  />
-                  <Text style={styles.btnLeft}>TRY AGAIN</Text>
+                 <Ionicons name="refresh-outline" size={20} color={COLORS.DARK} />
+                  <Text style={styles.btnLeft}>{" "}TRY AGAIN</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
@@ -168,13 +160,12 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: Platform.OS == "ios" ? 16 : 20,
-    lineHeight: 28,
-    maxWidth: 331,
+    lineHeight: 36,
     textAlign: "left",
     color: COLORS.FADED,
   },
   footer: {
-    marginVertical: Platform.OS == "ios" ? 8 : 30,
+    marginVertical: Platform.OS == "ios" ? 2 : 30,
     backgroundColor: "#f2f4f7",
     height: 60,
     marginHorizontal: 20,
