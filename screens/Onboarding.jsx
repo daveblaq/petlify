@@ -166,8 +166,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: Platform.OS == "ios" ? 24 : 40,
     paddingBottom: 15,
-    fontWeight: "700",
+    
     color: "#212738",
+    fontFamily: "Quicksand_700Bold"
   },
   subtitle: {
     fontSize: Platform.OS == "ios" ? 16 : 20,
@@ -175,6 +176,7 @@ const styles = StyleSheet.create({
     maxWidth: 331,
     textAlign: "center",
     color: COLORS.FADED,
+     fontFamily: "Quicksand_400Regular"
   },
   footer: {
     marginVertical: Platform.OS == "ios" ? 8 : 30,
@@ -190,12 +192,14 @@ const styles = StyleSheet.create({
   btnLeft: {
     color: COLORS.BTN_FADED,
     fontSize: Platform.OS == "ios" ? 18 : 22,
-    fontWeight: "700",
+    
+     fontFamily: "Quicksand_700Bold"
   },
   btnRight: {
     color: COLORS.BASE,
     fontSize: Platform.OS == "ios" ? 18 : 22,
-    fontWeight: "700",
+   
+     fontFamily: "Quicksand_700Bold"
   },
   btnRow: {
     flexDirection: "row",

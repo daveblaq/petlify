@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     paddingTop: 52,
     paddingBottom: 10,
     fontSize: Platform.OS == "ios" ? 20 : 24,
-    fontWeight: "bold",
+    fontFamily: "Quicksand_700Bold",
   },
   cta: {
     color: "#63687E",
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     maxWidth: 357,
     lineHeight: 30,
+    fontFamily: "Quicksand_700Bold",
   },
   form: {
     marginTop: 40,
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
     fontSize: Platform.OS == "ios" ? 18 : 22,
     marginTop: 30,
     textAlign: "center",
+    fontFamily: "Quicksand_700Bold"
   },
 });
 

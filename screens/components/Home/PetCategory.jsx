@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 		
 		
 		width: 100,
-		marginRight: Platform.OS =='ios' ? 5 : 15,
+		marginRight: Platform.OS =='ios' ? 2 : 15,
 		marginVertical: 10,
 	},
 		
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
       width: 5,
       height: 5,
     },
-    shadowOpacity: 0.75,
+    shadowOpacity: 0.55,
     shadowRadius: 3,
     elevation: 7,
 	},
@@ -57,12 +57,14 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		color: COLORS.FADED,
 		paddingVertical: 10,
+		fontFamily: "Quicksand_700Bold",
 	},
 	text_PRIMARY: {
 		fontSize: Platform.OS == 'ios' ? 16 : 22,
 		textAlign: "center",
 		color: COLORS.BASE,
 		paddingVertical: 10,
+		fontFamily: "Quicksand_700Bold"
 	}
 })
 export default PetCategory

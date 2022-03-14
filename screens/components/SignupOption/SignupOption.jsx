@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		fontSize: Platform.OS == "ios" ? 18 : 24,
-		fontWeight: '700',
+		fontFamily: "Quicksand_700Bold",
 		paddingHorizontal:20,
 	},
 	text_BLUE: {

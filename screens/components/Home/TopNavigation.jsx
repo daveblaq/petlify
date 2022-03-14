@@ -3,12 +3,12 @@ import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import COLORS from '../const/colors';
 
-const TopNavigation = () => {
+const TopNavigation = ({ name }) => {
   return (
 	<View style={styles.nav}>
 		  <View style={styles.greeting}>
 			  <Text style={styles.user}>
-				  Hi Daisy
+				  Hi {name}
 			  </Text>
 			  <Text style={styles.location}><Ionicons name="md-location-outline" size={24} color={COLORS.BLUE} />Boston, Newyork</Text>
 		  </View>
@@ -28,20 +28,18 @@ const styles = StyleSheet.create({
 		marginHorizontal: 20,
 	},
 	greeting: {
-	
-    justifyContent: 'center',
-		
+	justifyContent: 'center',
 	textAlign: "left"
 	},
 	user: {
 		fontSize: Platform.OS == "ios" ? 28 : 45,
-		fontWeight: "bold",
+		fontFamily: "Quicksand_700Bold",
 		color: "#272932",
 		letterSpacing: 1,
 	},
 	location: {
 		fontSize: Platform.OS == "ios" ? 18 : 20,
-		fontWeight: "600",
+		fontFamily: "Quicksand_700Bold",
 		color: COLORS.FADED,
 		paddingVertical: 5,
 	},

@@ -18,7 +18,7 @@ const CustomButton = ({ onPress, text, type = "PRIMARY" }) => {
 };
 
 const styles = StyleSheet.create({
-  btnsecond: {
+   btnsecond: {
     height: 50,
     borderRadius: 20,
     justifyContent: "center",
@@ -29,10 +29,11 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 5,
       height: 5,
-    },
+  },
     shadowOpacity: 0.75,
     shadowRadius: 5,
     elevation: 9,
+    
   },
 
   btn_PRIMARY: {
@@ -48,12 +49,12 @@ const styles = StyleSheet.create({
   },
   text_PRIMARY: {
     color: COLORS.WHITE,
-    fontWeight: "bold",
+    fontFamily: "Quicksand_700Bold",
     fontSize: Platform.OS == "ios" ? 18 : 20,
   },
   text_TERTIARY: {
     color: COLORS.BASE,
-    fontWeight: "bold",
+   fontFamily: "Quicksand_700Bold",
     fontSize: 16,
   },
   text_SECONDARY: {

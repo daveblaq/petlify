@@ -11,6 +11,9 @@ import SignupTwo from "./screens/SignupTwo";
 import VerifyOTP from "./screens/VerifyOTP";
 import KnowBetter from "./screens/KnowBetter";
 import ErrorPage from "./screens/ErrorPage";
+import AppLoading from 'expo-app-loading';
+
+import {  useFonts, Quicksand, Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold} from '@expo-google-fonts/quicksand';
 
 
 
@@ -18,6 +21,16 @@ import ErrorPage from "./screens/ErrorPage";
 
 const Stack = createNativeStackNavigator();
 function App() {
+
+ 
+
+
+   let [fontsLoaded] = useFonts({
+   Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold
+  });
+if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -37,11 +50,11 @@ function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}}
 
 const styles = StyleSheet.create({
  
 });
 
 
-export default App;
+  export default  App ;

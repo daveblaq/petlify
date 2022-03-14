@@ -3,7 +3,7 @@ import { View, Text, SafeAreaView, StyleSheet, Dimensions, ImageBackground, Plat
 import { StatusBar } from "expo-status-bar";
 import { FontAwesome, Feather } from "@expo/vector-icons";
 import COLORS from "../components/const/colors";
-import PetView from "../components/Home/Petview/PetView";
+import PetView from "../components/Home/PetView";
 import TopNavigation from '../components/Home/TopNavigation';
 import SearchBox from "../components/Home/SearchBox";
 import PetCategory from "../components/Home/PetCategory";
@@ -52,6 +52,25 @@ const HomeScreen = ({ navigation}) => {
 		},
 	];
 	
+
+	const animals = [
+		{
+			id: 1,
+			image: require('../../assets/images/rabbits.png'),
+			pet: 'Potter Pete',
+			breed: 'Nowergian Breed',
+			distance: '16km Away',
+			price: '50,000'
+		},
+		{
+			id: 2,
+			image: require('../../assets/images/dog.png'),
+			pet: 'Potter Pete',
+			breed: 'Nowergian Breed',
+			distance: '16km Away',
+			price: '50,000'
+		}
+	]
 	return (
 	 
     <SafeAreaView>
@@ -59,13 +78,13 @@ const HomeScreen = ({ navigation}) => {
 		  
 		  <View style={styles.imageContainer}>
 			  <ImageBackground source={require("../../assets/images/bg.png")} style={{ flex: 1 }}>
-					<TopNavigation />
+					<TopNavigation name="Daisy" />
 					<SearchBox />
 					<View style={styles.categoriesContainer}>
 						<ScrollView horizontal={true} vertical={false} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
 							{categoryitems.map((item, i) => (
-								<PetCategory key={i} pet={item.text} type={item.type} image={item.image}/>
-								))}
+								<PetCategory key={i} pet={item.text} type={item.type} image={item.image} />
+							))}
 						
 							</ScrollView>
 						</View>
@@ -76,18 +95,10 @@ const HomeScreen = ({ navigation}) => {
 			  <View style={styles.card}>
 				  <View style={styles.cardContainer}>
 					  <ScrollView horizontal={false} vertical={true} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-					  <PetView />
-					  <PetView />
-					  <PetView />
-					  <PetView />
-					  <PetView />
-					  <PetView />
-					  <PetView />
-					  <PetView />
-						  <PetView />
-						  <PetView />
-						  <PetView />
-						  <PetView />
+									{animals.map((animal, index) => (
+										<PetView key={index} pet={animal.pet} image={animal.image} breed={animal.breed} />
+										))}
+					
 						  </ScrollView>
 				</View>
 			  </View>
@@ -107,6 +118,8 @@ const styles = StyleSheet.create({
   },
   Content: {
 	  height: "55%",
+	  backgroundColor: 'transparent',
+	  borderRadius: 24,
 	  
 },
 card: {

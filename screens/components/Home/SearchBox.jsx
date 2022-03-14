@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native'
-import React from 'react'
+import React from 'react';
 import COLORS from '../const/colors';
 
-const SearchBox = ({	onFocus = () => { },}) => {
+const SearchBox = ({	onFocus = () => { }, }) => {
 	 const [isFocused, setIsFocused] = React.useState(false);
   return (
 	<View style={[
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 	input: {
 		width: '80%',
 		fontSize: Platform.OS == 'ios' ? 16 : 20,
-		fontWeight: '600',
+		fontFamily: "Quicksand_700Bold",
 	}
 })
 

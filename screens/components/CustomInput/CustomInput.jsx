@@ -60,11 +60,13 @@ const styles = StyleSheet.create({
     color: COLORS.BTN_FADED,
 
     borderWidth: 1.5,
+    fontFamily: "Quicksand_700Bold"
   },
   label: {
     
     color: "#63687E",
     fontSize: Platform.OS == "ios" ? 16 : 18,
+    fontFamily: "Quicksand_700Bold"
   },
 });
 

@@ -1,18 +1,23 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image, Platform } from 'react-native';
 import React from 'react';
-import COLORS from '../../const/colors';
+import COLORS from '../const/colors';
 import { Divider } from 'react-native-elements';
 
-const PetView = () => {
+const PetView = ({ pet, image, breed}) => {
 	return (
 	  <>
 			<View style={styles.cardContent}>
 				<View style={styles.imageContainer}>
-
+				<Image source={image} style={styles.image} resizeMode="cover" />
 				</View>
 				<View style={styles.contentContainer}>
+					
+					
+						
+				
+				</View>
 
-					</View>
+				
 
 	  </View>
 			<Divider horizontal={true} color={"#EBEDF1"} width={2} />
@@ -22,11 +27,13 @@ const PetView = () => {
 
 const styles = StyleSheet.create({
 	cardContent: {
-		height: 141,
+		height: Platform.OS == 'ios' ? 140 : 150,
 		width: '100%',
 		backgroundColor: COLORS.WHITE,
 		borderRadius: 24,
 		marginVertical: 20,
+		
+		flexDirection: "row",
 		 shadowColor: "rgba(196, 196, 196, 0.5)",
     shadowOffset: {
       width: 5,
@@ -39,6 +46,18 @@ const styles = StyleSheet.create({
 	imageContainer: {
 
 	},
+	image: {
+		height: Platform.OS == 'ios' ? 140 : 150,
+		width: Platform.OS == 'ios' ? 140 : 150,
+		borderTopLeftRadius: 24,
+		borderBottomLeftRadius: 24,
+	},
+	contentContainer: {
+		padding: 20,
+		
+		
+	},
+	
 })
 
 export default PetView
