@@ -2,14 +2,14 @@ import { View, Text, StyleSheet,Image, Platform } from 'react-native'
 import React from 'react';
 import COLORS from '../const/colors';
 
-const PetCategory = ({ pet, image }) => {
+const PetCategory = ({ image, pet, type="PRIMARY" }) => {
 	return (
 	  <>
 			<View style={styles.container}>
-				<View style={styles.content}>
-	  <Image source={image}  style={styles.image} resizeMode="contain" />
+				<View style={[styles.content, styles[`cat_${type}`]]}>
+					<Image source={image}  style={styles.image} resizeMode="contain" />
 				</View>
-				<Text style={styles.text}>{pet}</Text>
+				<Text style={styles[`text_${type}`]}>{pet}</Text>
 				</View>
 			
 	  </>
@@ -25,11 +25,12 @@ const styles = StyleSheet.create({
 		
 		
 		width: 100,
-		marginRight: 15,
+		marginRight: Platform.OS =='ios' ? 5 : 15,
 		marginVertical: 10,
 	},
+		
 	content: {
-		backgroundColor: "#FCF0E9",
+		
 		padding: 15,
 		borderRadius: 18,
 		shadowColor: "rgba(196, 196, 196, 0.5)",
@@ -41,14 +42,26 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 7,
 	},
+	cat_PRIMARY: {
+		backgroundColor: COLORS.BASE,
+	},
+	cat_TERTIARY: {
+		backgroundColor: "#FCF0E9",
+	},
 	image: {
 		width: Platform.OS =='ios' ? 52 : 65,
 		height: Platform.OS =='ios' ? 69 : 80,
 	},
-	text: {
+	text_TERTIARY: {
 		fontSize: Platform.OS == 'ios' ? 16 : 22,
 		textAlign: "center",
 		color: COLORS.FADED,
+		paddingVertical: 10,
+	},
+	text_PRIMARY: {
+		fontSize: Platform.OS == 'ios' ? 16 : 22,
+		textAlign: "center",
+		color: COLORS.BASE,
 		paddingVertical: 10,
 	}
 })

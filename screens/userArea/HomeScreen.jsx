@@ -13,7 +13,44 @@ const { width, height } = Dimensions.get("window");
 
 const HomeScreen = ({ navigation}) => {
 
-	
+	const categoryitems = [
+		{
+			id: 1,
+			text: 'All Pets',
+			image: require('../../assets/images/icons/pets/paw.png'),
+			type: "PRIMARY",
+		},
+		{
+			id: 2,
+			text: 'Dog',
+			image: require('../../assets/images/icons/pets/dog.png'),
+			type: "TERTIARY",
+		},
+		{
+			id: 3,
+			text: 'Cats',
+			image: require('../../assets/images/icons/pets/cat.png'),
+			type: "TERTIARY",
+		},
+		{
+			id: 4,
+			text: 'Rabbits',
+			image: require('../../assets/images/icons/pets/rabbit.png'),
+			type: "TERTIARY",
+		},
+		{
+			id: 5,
+			text: 'Birds',
+			image: require('../../assets/images/icons/pets/rabbit.png'),
+			type: "TERTIARY",
+		},
+		{
+			id: 6,
+			text: 'Fish',
+			image: require('../../assets/images/icons/pets/rabbit.png'),
+			type: "TERTIARY",
+		},
+	];
 	
 	return (
 	 
@@ -26,10 +63,10 @@ const HomeScreen = ({ navigation}) => {
 					<SearchBox />
 					<View style={styles.categoriesContainer}>
 						<ScrollView horizontal={true} vertical={false} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-						<PetCategory pet="Dog" image={require('../../assets/images/icons/pets/dog.png')} />
-							<PetCategory pet="Cats" image={require('../../assets/images/icons/pets/cats')} />
-							<PetCategory pet="Rabbits" image={require('../../assets/images/icons/pets/rabbits.png')} />
-							
+							{categoryitems.map((item, i) => (
+								<PetCategory key={i} pet={item.text} type={item.type} image={item.image}/>
+								))}
+						
 							</ScrollView>
 						</View>
 			  </ImageBackground>

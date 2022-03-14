@@ -11,7 +11,7 @@ const SearchBox = ({	onFocus = () => { },}) => {
             borderColor: isFocused ? COLORS.BASE : "#F2F4F7",
           },
         ]}>
-		  <Image source={require('../../../assets/images/icons/search.png')} style={styles.icon} />
+		  <Image source={require('../../../assets/images/icons/search.png')} style={styles.icon} resizeMode="contain" />
 		  <TextInput style={styles.input} placeholder="Search for a pet"
         placeholderTextColor={COLORS.FADED}
         autoCorrect={false}
@@ -20,7 +20,7 @@ const SearchBox = ({	onFocus = () => { },}) => {
           setIsFocused(true);
 			  }}
 		 onBlur={() => setIsFocused(false)}  />
-	  <Image source={require('../../../assets/images/icons/filter.png')} style={styles.icon} />
+	  <Image source={require('../../../assets/images/icons/filter.png')} style={styles.icon} resizeMode="contain" />
 	</View>
   )
 }
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		borderWidth: 1,
+		borderWidth: 1.5,
 	},
 	icon: {
 		height: 24,
