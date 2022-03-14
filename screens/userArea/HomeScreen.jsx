@@ -41,13 +41,13 @@ const HomeScreen = ({ navigation}) => {
 		{
 			id: 5,
 			text: 'Birds',
-			image: require('../../assets/images/icons/pets/rabbit.png'),
+			image: require('../../assets/images/icons/pets/bird.png'),
 			type: "TERTIARY",
 		},
 		{
 			id: 6,
 			text: 'Fish',
-			image: require('../../assets/images/icons/pets/rabbit.png'),
+			image: require('../../assets/images/icons/pets/fish.png'),
 			type: "TERTIARY",
 		},
 	];
@@ -66,16 +66,49 @@ const HomeScreen = ({ navigation}) => {
 			id: 2,
 			image: require('../../assets/images/dog.png'),
 			pet: 'Potter Pete',
+			breed: 'German Shepherd',
+			distance: '16km Away',
+			price: '50,000'
+		},
+		{
+			id: 3,
+			image: require('../../assets/images/rabbits.png'),
+			pet: 'Potter Pete',
 			breed: 'Nowergian Breed',
 			distance: '16km Away',
 			price: '50,000'
-		}
+		},
+		{
+			id: 4,
+			image: require('../../assets/images/dog.png'),
+			pet: 'Potter Pete',
+			breed: 'Nowergian Breed',
+			distance: '16km Away',
+			price: '50,000'
+		},
+		{
+			id: 5,
+			image: require('../../assets/images/rabbits.png'),
+			pet: 'Potter Pete',
+			breed: 'Nowergian Breed',
+			distance: '16km Away',
+			price: '50,000'
+		},
+		{
+			id: 6,
+			image: require('../../assets/images/fish.png'),
+			pet: 'Potter Pete',
+			breed: 'Nowergian Breed',
+			distance: '16km Away',
+			price: '50,000'
+		},
+		
 	]
 	return (
 	 
     <SafeAreaView>
 		  <StatusBar backgroundColor={COLORS.BACKGROUND_COLOR} />
-		  
+		   <ScrollView vertical={true} horizontal={false} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
 		  <View style={styles.imageContainer}>
 			  <ImageBackground source={require("../../assets/images/bg.png")} style={{ flex: 1 }}>
 					<TopNavigation name="Daisy" />
@@ -96,7 +129,7 @@ const HomeScreen = ({ navigation}) => {
 				  <View style={styles.cardContainer}>
 					  <ScrollView horizontal={false} vertical={true} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
 									{animals.map((animal, index) => (
-										<PetView key={index} pet={animal.pet} image={animal.image} breed={animal.breed} />
+										<PetView key={index} pet={animal.pet} image={animal.image} breed={animal.breed} distance={animal.distance} price={animal.price} />
 										))}
 					
 						  </ScrollView>
@@ -104,7 +137,7 @@ const HomeScreen = ({ navigation}) => {
 			  </View>
        
 			  </View>
-			
+			 </ScrollView>
     </SafeAreaView>
 	
   );
@@ -112,12 +145,13 @@ const HomeScreen = ({ navigation}) => {
 
 const styles = StyleSheet.create({
   imageContainer: {
-		height: "45%",
-	  backgroundColor: COLORS.WHITE,
+		flex: 1,
+		backgroundColor: COLORS.WHITE,
+	  
 	
   },
   Content: {
-	  height: "55%",
+	  flex: 1,
 	  backgroundColor: 'transparent',
 	  borderRadius: 24,
 	  
@@ -130,6 +164,7 @@ card: {
 cardContainer: {
 	
 	marginHorizontal: 20,
+	marginTop: 10,
 	},
 	categoriesContainer: {
 	  marginLeft: 20,

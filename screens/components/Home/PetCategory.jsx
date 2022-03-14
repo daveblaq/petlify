@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet,Image, Platform } from 'react-native'
+import { View, Text, StyleSheet,Image, Platform, ImageBackground } from 'react-native'
 import React from 'react';
 import COLORS from '../const/colors';
 
@@ -6,9 +6,9 @@ const PetCategory = ({ image, pet, type="PRIMARY" }) => {
 	return (
 	  <>
 			<View style={styles.container}>
-				<View style={[styles.content, styles[`cat_${type}`]]}>
+				<ImageBackground source={require('../../../assets/images/cat.png')} style={[styles.content, styles[`cat_${type}`]]} resizeMode="cover" >
 					<Image source={image}  style={styles.image} resizeMode="contain" />
-				</View>
+				</ImageBackground>
 				<Text style={styles[`text_${type}`]}>{pet}</Text>
 				</View>
 			
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 		
 		width: 100,
 		marginRight: Platform.OS =='ios' ? 2 : 15,
-		marginVertical: 10,
+		marginVertical: 20,
 	},
 		
 	content: {

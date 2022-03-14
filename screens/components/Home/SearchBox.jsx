@@ -27,9 +27,9 @@ const SearchBox = ({	onFocus = () => { }, }) => {
 
 const styles = StyleSheet.create({
 	searchBox: {
-		marginVertical: 25,
+		marginVertical: 40,
 		marginHorizontal: 20,
-		height: 50,
+		height: 60,
 		backgroundColor: "#F2F4F7",
 		borderRadius: 20,
 		paddingHorizontal: 20,
