@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, Text, Platform } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, Platform, Image } from "react-native";
 import COLORS from "../const/colors";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -11,7 +11,7 @@ const CustomButton = ({ onPress, text, type = "PRIMARY" }) => {
       onPress={onPress}
     >
       <Text style={styles[`text_${type}`]}>
-			  {text} {" "}<Ionicons name="ios-paw-outline" size={22} color="white" />
+			  {text} {" "}<Image source={require('../../../assets/images/icons/paw.png')} style={styles.icon} resizeMode="contain" />
       </Text>
     </TouchableOpacity>
   );
@@ -62,6 +62,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
   },
+  icon: {
+    height: 24,
+    width: 24,
+  }
 });
 
 export default CustomButton;

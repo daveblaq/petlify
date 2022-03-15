@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TextInput } from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput, Platform } from 'react-native'
 import React from 'react';
 import COLORS from '../const/colors';
 
@@ -27,7 +27,7 @@ const SearchBox = ({	onFocus = () => { }, }) => {
 
 const styles = StyleSheet.create({
 	searchBox: {
-		marginVertical: 40,
+		marginVertical: Platform.OS == "ios" ? 20 : 30,
 		marginHorizontal: 20,
 		height: 60,
 		backgroundColor: "#F2F4F7",

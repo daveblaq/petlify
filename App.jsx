@@ -12,6 +12,7 @@ import VerifyOTP from "./screens/VerifyOTP";
 import KnowBetter from "./screens/KnowBetter";
 import ErrorPage from "./screens/ErrorPage";
 import AppLoading from 'expo-app-loading';
+import BottomNavigator from './screens/navigators/BottomNavigator'
 
 import {  useFonts, Quicksand, Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold} from '@expo-google-fonts/quicksand';
 
@@ -46,7 +47,7 @@ if (!fontsLoaded) {
         <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
         <Stack.Screen name="KnowBetter" component={KnowBetter} />
         <Stack.Screen name="ErrorPage" component={ErrorPage} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="HomeScreen" component={BottomNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

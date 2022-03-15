@@ -70,9 +70,9 @@ const HomeScreen = ({ navigation}) => {
 			distance: '16km Away',
 			price: '50,000'
 		},
-		{
+			{
 			id: 3,
-			image: require('../../assets/images/rabbits.png'),
+			image: require('../../assets/images/fish.png'),
 			pet: 'Potter Pete',
 			breed: 'Nowergian Breed',
 			distance: '16km Away',
