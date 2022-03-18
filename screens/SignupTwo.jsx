@@ -59,10 +59,9 @@ const SignupTwo = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS == "ios" ? 20 : 50,
+   marginTop: Platform.OS =="ios" ? 10 : 100,
     marginHorizontal: 25,
     justifyContent: "center",
-
     textAlign: "left",
   },
   logo: {
@@ -81,10 +80,10 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     maxWidth: 357,
     lineHeight: 30,
-    fontFamily: "Quicksand_700Bold",
+    fontFamily: "Nunito_500Medium",
   },
   form: {
-    marginTop: 40,
+    marginTop: 30,
     marginHorizontal: 25,
   },
   footerText: {
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: Platform.OS == "ios" ? 18 : 22,
     marginTop: 30,
     textAlign: "center",
-    fontFamily: "Quicksand_700Bold"
+    fontFamily: "Quicksand_500Medium"
   },
 });
 

@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     maxWidth: 331,
     textAlign: "center",
     color: COLORS.FADED,
-     fontFamily: "Quicksand_400Regular"
+     fontFamily: "Nunito_500Medium"
   },
   footer: {
     marginVertical: Platform.OS == "ios" ? 8 : 30,

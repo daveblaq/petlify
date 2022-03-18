@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation}) => {
 		},
 		{
 			id: 2,
-			text: 'Dog',
+			text: 'Dogs',
 			image: require('../../assets/images/icons/pets/dog.png'),
 			type: "TERTIARY",
 		},

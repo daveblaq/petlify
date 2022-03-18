@@ -1,29 +1,37 @@
-import { View, Text, StyleSheet, Image, Platform } from 'react-native';
+import { View, Text, StyleSheet, Image, Platform, Dimensions } from 'react-native';
 import React from 'react';
 import COLORS from '../const/colors';
 import { Divider } from 'react-native-elements';
 
+const { width, height} = Dimensions.get("window");
 
-const PetView = ({ pet, image, breed, distance, price}) => {
+const PetView = ({ pet, image, breed, distance, price }) => {
 	return (
 	  <>
 			<View style={styles.cardContent}>
-				<View style={styles.imageContainer}>
+				
 				<Image source={image} style={styles.image} resizeMode="cover" />
-				</View>
+				
+
 				<View style={styles.contentContainer}>
+					<View style={styles.Container}>
 					<View>
 						<Text style={styles.pet}>{pet}</Text>
 						<Text style={styles.breed}>{breed}</Text>
 						<Text style={styles.distance}>{distance}</Text>
-						<Text style={styles.price}>{'\u20A6'}{price} </Text>
 					</View>
 					
-						
-					<Image source={require('../../../assets/images/icons/like-inactive.png')} style={styles.icon} resizeMode="contain"/>
+						<View>
+							<Image source={require('../../../assets/images/icons/like-inactive.png')} style={styles.icon} resizeMode="contain" />
+							</View>
+				</View>
+					<View>
+						<Text style={styles.price}>{'\u20A6'}{price} </Text>
+				</View>
+
 				</View>
 				
-
+			
 				
 
 	  </View>
@@ -62,17 +70,18 @@ const styles = StyleSheet.create({
 		
 	},
 	contentContainer: {
-		paddingVertical: 15,
-		paddingHorizontal: 20,
+		marginVertical: 20,
+		marginHorizontal: 20,
+		width: '60%'
+	},
+	Container: {
 		flexDirection: "row",
-		justifyContent: "space-between",
-		width: Platform.OS == 'ios' ? '60%' : '65%',
-		
+		justifyContent: "space-between"
 		
 	},
 	icon: {
-		height: 28,
-		width: 28,
+		height: 26,
+		width: 26,
 	},
 	pet: {
 		fontSize: Platform.OS == 'ios' ? 18 : 24,
@@ -82,22 +91,22 @@ const styles = StyleSheet.create({
 	breed: {
 		paddingVertical: 4,
 		fontSize: Platform.OS == 'ios' ? 14 : 20,
-		fontFamily: "Quicksand_500Medium",
+		fontFamily: "Nunito_400Regular",
 		color: COLORS.FADED,
 		
 	},
 	distance: {
-		paddingTop: 5,
+		
 		fontSize: Platform.OS == 'ios' ? 16 : 20,
 		fontFamily: "Quicksand_500Medium",
 		color: COLORS.BLUE,
 	}, 
 	price: {
-		textAlign: "right",
 		fontFamily: "Quicksand_700Bold",
 		fontSize: Platform.OS == 'ios' ? 18 : 24,
-		paddingVertical: 8,
+		paddingTop: 15,
 		color: "#272932",
+		
 	}
 })
 

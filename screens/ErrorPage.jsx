@@ -20,7 +20,7 @@ const slides = [
   
 ];
 
-const ErrorPage = ({ navigation}) => {
+const ErrorPage = ({ navigation }) => {
 
 	 const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
    const ref = React.useRef();

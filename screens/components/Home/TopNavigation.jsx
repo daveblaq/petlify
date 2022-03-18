@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Platform, Image } from 'react-native'
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import COLORS from '../const/colors';
+import Icon from 'react-native-remix-icon';
 
 const TopNavigation = ({ name }) => {
   return (
@@ -10,7 +11,7 @@ const TopNavigation = ({ name }) => {
 			  <Text style={styles.user}>
 				  Hi {name}
 			  </Text>
-			  <Text style={styles.location}><Ionicons name="md-location-outline" size={24} color={COLORS.BLUE} />Boston, Newyork</Text>
+			  <Text style={styles.location}><Icon name={"map-pin-line"} size={18} color={COLORS.BLUE} /> Boston, Newyork</Text>
 		  </View>
 		  
 			<Image source={require('../../../assets/images/icons/bell.png')}  style={styles.icon} />
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
 	},
 	location: {
 		fontSize: Platform.OS == "ios" ? 18 : 20,
-		fontFamily: "Quicksand_700Bold",
+		fontFamily: "Quicksand_500Medium",
 		color: COLORS.FADED,
 		paddingVertical: 5,
 	},

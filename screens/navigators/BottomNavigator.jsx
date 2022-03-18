@@ -17,9 +17,9 @@ const MyTabBar = ({state, descriptors, navigation}) => {
         backgroundColor: COLORS.WHITE,
         borderColor: "grey",
         alignItems: 'center',
-			  justifyContent: 'space-between',
-			  borderTopLeftRadius: 24,
-			  borderTopRightRadius: 24,
+	   	justifyContent: 'space-between',
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
 		
       }}>
       {state.routes.map((route, index) => {
@@ -48,13 +48,12 @@ const MyTabBar = ({state, descriptors, navigation}) => {
 					<>
               <View
                 style={{
-                  height: 6,
-                  width: 30,
+                  height: 2,
+                  width: 50,
                   backgroundColor: COLORS.BASE,
                   position: 'absolute',
                   top: -20,
-                  borderBottomLeftRadius: 6,
-                  borderBottomRightRadius: 6,
+                  
                 }}
 					/>
 					
@@ -79,7 +78,7 @@ const BottomNavigator = () => {
 			tabBarIcon: ({ focused, color, size, label }) => (
 				<>
 				<Icon name={focused ? "home-5-fill" : "home-5-line"} size={Platform.OS == 'ios' ? 25: size} color={color} />
-				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_600SemiBold", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
+				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_500Medium", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
               {label}
             </Text>
 				</>
@@ -93,7 +92,7 @@ const BottomNavigator = () => {
 			tabBarIcon: ({ focused, color, size, label }) => (
 				<>
 				<Icon name={focused ? "shopping-bag-3-fill" : "shopping-bag-3-line"} size={Platform.OS == 'ios' ? 25: size} color={color} />
-				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_600SemiBold", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
+				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_500Medium", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
               {label}
             </Text>
 				</>
@@ -107,7 +106,7 @@ const BottomNavigator = () => {
 			tabBarIcon: ({ focused, color, size, label }) => (
 				<>
 				<Icon name={focused ? "pulse-line" : "pulse-line"} size={Platform.OS == 'ios' ? 25: size} color={color} />
-				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_600SemiBold", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
+				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_500Medium", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
               {label}
             </Text>
 				</>
@@ -121,7 +120,7 @@ const BottomNavigator = () => {
 			tabBarIcon: ({ focused, color, size, label }) => (
 				<>
 				<Icon name={focused ? "user-3-fill" : "user-3-line"} size={Platform.OS == 'ios' ? 25: size} color={color} />
-				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_600SemiBold", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
+				<Text style={{ color: focused ? COLORS.BASE : '#858993',  fontFamily: "Quicksand_500Medium", fontSize: Platform.OS =='ios' ? 16 : 18 }}>
               {label}
             </Text>
 				</>

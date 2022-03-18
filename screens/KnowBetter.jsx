@@ -53,7 +53,7 @@ const KnowBetter = ({ navigation }) => {
         <View style={styles.form}>
           <View>
             {items.map((item, i) => (
-               <SignupOption key={i} type={item.type} text={item.text} image={item.image} hex={item.hex} onPress={() => navigation.replace("HomeScreen")} />
+               <SignupOption key={i} type={item.type} text={item.text} image={item.image} hex={item.hex} onPress={() => navigation.navigate("HomeScreen")} />
             ))}
            
            
@@ -66,7 +66,7 @@ const KnowBetter = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS == "ios" ? 30 : 80,
+     marginTop: Platform.OS =="ios" ? 10 : 60,
     marginHorizontal: 25,
     justifyContent: "center",
 
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     maxWidth: 357,
     lineHeight: 30,
-    fontFamily: "Quicksand_700Bold"
+    fontFamily: "Nunito_500Medium"
   },
   form: {
     marginTop: Platform.OS == "ios" ? 32 : 32,

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet,Image, Platform, ImageBackground } from 'react-n
 import React from 'react';
 import COLORS from '../const/colors';
 
-const PetCategory = ({ image, pet, type="PRIMARY" }) => {
+const PetCategory = ({ image, pet, type="PRIMARY", focused }) => {
 	return (
 	  <>
 			<View style={styles.container}>
@@ -19,11 +19,8 @@ const PetCategory = ({ image, pet, type="PRIMARY" }) => {
 
 const styles = StyleSheet.create({
 	container: {
-		
 		alignItems: "center",
 		justifyContent: "center",
-		
-		
 		width: 100,
 		marginRight: Platform.OS =='ios' ? 2 : 15,
 		marginVertical: 20,

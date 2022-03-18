@@ -56,7 +56,7 @@ const SignupOne = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS =="ios" ? 100 : 150,
+     marginTop: Platform.OS =="ios" ? 10 : 100,
     marginHorizontal: 25,
     justifyContent: "center",
     alignItems: "center",
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     color: "#63687E",
     fontSize: Platform.OS == "ios" ? 18 : 22,
     paddingTop: 5,
-    fontFamily: "Quicksand_700Bold",
+    fontFamily: "Nunito_500Medium",
   },
   form: {
     marginTop: 40,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     fontSize: Platform.OS == "ios" ? 18 : 22,
     marginTop: 30,
     textAlign: "center",
-    fontFamily: "Quicksand_700Bold"
+    fontFamily: "Quicksand_500Medium"
   },
 });
 

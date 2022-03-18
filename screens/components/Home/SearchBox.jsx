@@ -1,9 +1,13 @@
-import { View, Text, StyleSheet, Image, TextInput, Platform } from 'react-native'
-import React from 'react';
+import { View, Text, StyleSheet, Image, TextInput, Platform, } from 'react-native'
+import React, {useRef} from 'react';
 import COLORS from '../const/colors';
+import Icon from 'react-native-remix-icon';
 
 const SearchBox = ({	onFocus = () => { }, }) => {
-	 const [isFocused, setIsFocused] = React.useState(false);
+	const [isFocused, setIsFocused] = React.useState(false);
+	
+	
+
   return (
 	<View style={[
           styles.searchBox,
@@ -11,7 +15,8 @@ const SearchBox = ({	onFocus = () => { }, }) => {
             borderColor: isFocused ? COLORS.BASE : "#F2F4F7",
           },
         ]}>
-		  <Image source={require('../../../assets/images/icons/search.png')} style={styles.icon} resizeMode="contain" />
+		  
+		   <Icon name={"search-line"} size={24} color={isFocused ? COLORS.BASE : "#63687E"} />
 		  <TextInput style={styles.input} placeholder="Search for a pet"
         placeholderTextColor={COLORS.FADED}
         autoCorrect={false}
@@ -20,7 +25,7 @@ const SearchBox = ({	onFocus = () => { }, }) => {
           setIsFocused(true);
 			  }}
 		 onBlur={() => setIsFocused(false)}  />
-	  <Image source={require('../../../assets/images/icons/filter.png')} style={styles.icon} resizeMode="contain" />
+	   <Icon name={"sound-module-line"} size={24} color={isFocused ? COLORS.BASE : "#63687E"} />
 	</View>
   )
 }
@@ -29,14 +34,14 @@ const styles = StyleSheet.create({
 	searchBox: {
 		marginVertical: Platform.OS == "ios" ? 20 : 30,
 		marginHorizontal: 20,
-		height: 60,
+		height: Platform.OS == "ios" ? 50 : 60,
 		backgroundColor: "#F2F4F7",
 		borderRadius: 20,
 		paddingHorizontal: 20,
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		borderWidth: 1.5,
+		borderWidth: 1,
 	},
 	icon: {
 		height: 24,
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
 	input: {
 		width: '80%',
 		fontSize: Platform.OS == 'ios' ? 16 : 20,
-		fontFamily: "Quicksand_700Bold",
+		fontFamily: "Nunito_400Regular",
 	}
 })
 

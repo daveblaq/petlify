@@ -55,7 +55,7 @@ const VerifyOtp = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS == "ios" ? 30 : 80,
+    marginTop: Platform.OS =="ios" ? 10 : 60,
     marginHorizontal: 25,
     justifyContent: "center",
 
@@ -74,15 +74,15 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     maxWidth: 357,
     lineHeight: 30,
-    fontFamily: "Quicksand_700Bold"
+    fontFamily: "Nunito_700Bold"
   },
   confirm: {
     color: "#63687E",
-    fontSize: Platform.OS == "ios" ? 16 : 20,
+    fontSize: Platform.OS == "ios" ? 18 : 22,
     paddingTop: 15,
     maxWidth: 357,
     lineHeight: 30,
-    fontFamily: "Quicksand_700Bold"
+   fontFamily: "Nunito_500Medium",
   },
   form: {
     marginTop: Platform.OS == "ios" ? 10 : 20,

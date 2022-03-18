@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     color: COLORS.BTN_FADED,
 
     borderWidth: 1.5,
-    fontFamily: "Quicksand_700Bold"
+    fontFamily: "Nunito_500Medium",
   },
   label: {
     
