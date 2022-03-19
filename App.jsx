@@ -4,6 +4,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from './screens/userArea/HomeScreen';
+import StoreScreen from './screens/userArea/StoreScreen';
 import Onboarding from "./screens/Onboarding";
 import Login from "./screens/Login";
 import SignupOne from "./screens/SignupOne";
@@ -14,7 +15,7 @@ import ErrorPage from "./screens/ErrorPage";
 import AppLoading from 'expo-app-loading';
 import BottomNavigator from './screens/navigators/BottomNavigator'
 
-import { useFonts, Quicksand, Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
+import { useFonts, Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 import {
   Nunito_200ExtraLight,
   Nunito_300Light,
@@ -81,6 +82,7 @@ if (!fontsLoaded) {
         <Stack.Screen name="KnowBetter" component={KnowBetter} />
         <Stack.Screen name="ErrorPage" component={ErrorPage} />
         <Stack.Screen name="HomeScreen" component={BottomNavigator} />
+        <Stack.Screen name="StoreScreen" component={StoreScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -3,15 +3,17 @@ import { View, Text, SafeAreaView, StyleSheet, Dimensions, ImageBackground, Plat
 import { StatusBar } from "expo-status-bar";
 import { FontAwesome, Feather } from "@expo/vector-icons";
 import COLORS from "../components/const/colors";
-import PetView from "../components/Home/PetView";
-import TopNavigation from '../components/Home/TopNavigation';
+import TopNavigation from '../components/Store/TopNavigation';
 import SearchBox from "../components/Home/SearchBox";
-import PetCategory from "../components/Home/PetCategory";
+
 
 
 const { width, height } = Dimensions.get("window");
 
-const HomeScreen = ({ navigation }) => {
+const StoreScreen = ({ navigation }) => {
+	const [catergoryIndex, setCategoryIndex] = React.useState(0);
+	
+  const categories = ['Food', 'Medicines', 'Accessories'];
 
 	const categoryitems = [
 		{
@@ -113,26 +115,32 @@ const HomeScreen = ({ navigation }) => {
 			  <ImageBackground source={require("../../assets/images/bg.png")} style={{ flex: 1 }}>
 					<TopNavigation name="Daisy" />
 					<SearchBox />
-					<View style={styles.categoriesContainer}>
-						<ScrollView horizontal={true} vertical={false} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-							{categoryitems.map((item, i) => (
-								<PetCategory key={i} pet={item.text} type={item.type} image={item.image} />
-							))}
-						
-							</ScrollView>
-						</View>
+					  <View style={styles.categoryContainer}>
+        {categories.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            activeOpacity={0.8}
+            onPress={() => setCategoryIndex(index)} style={[
+                styles.bg,
+                catergoryIndex === index && styles.bgSelected,
+              ]}>
+            <Text
+              style={[
+                styles.categoryText,
+                catergoryIndex === index && styles.categoryTextSelected,
+              ]}>
+              {item}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
 			  </ImageBackground>
        
       </View>
 		  <View style={styles.Content}>
 			  <View style={styles.card}>
 				  <View style={styles.cardContainer}>
-					  <ScrollView horizontal={false} vertical={true} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-									{animals.map((animal, index) => (
-										<PetView key={index} pet={animal.pet} image={animal.image} breed={animal.breed} distance={animal.distance} price={animal.price} />
-										))}
-					
-						  </ScrollView>
+					  
 				</View>
 			  </View>
        
@@ -152,12 +160,21 @@ const styles = StyleSheet.create({
   },
   Content: {
 	  flex: 1,
-	  backgroundColor: 'transparent',
+	  backgroundColor: COLORS.WHITE,
 	  borderRadius: 24,
 	  
-},
+	},
+	bg: {
+		backgroundColor: COLORS.BG_FADED,
+		paddingVertical: Platform.OS == 'ios' ? 5 : 10,
+		paddingHorizontal: 15,
+		borderRadius: 25,
+	},
+	bgSelected: {
+		backgroundColor: COLORS.BASE,
+	},
 card: {
-	  backgroundColor: '#F2F4F7',
+	  backgroundColor: COLORS.WHITE,
 	 borderTopRightRadius: 50,
 	  borderTopLeftRadius: 50,
 	},
@@ -166,13 +183,25 @@ cardContainer: {
 	marginHorizontal: 20,
 	marginTop: 15,
 	},
-	categoriesContainer: {
-	  marginLeft: 20,
-  }
+
+categoryContainer: {
+    flexDirection: 'row',
+    marginTop: 20,
+    marginBottom: 20,
+	justifyContent: 'space-between',
+	marginHorizontal:30,
+  },
+	categoryText: {fontSize: Platform.OS == "ios" ? 16 : 18, color: '#858993', fontFamily: "Quicksand_500Medium"},
+  categoryTextSelected: {
+    color: COLORS.WHITE,
+    paddingBottom: 5,
+    
+  },
+	
 });
 
 
 
-export default HomeScreen;
+export default StoreScreen;
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, Platform} from 'react-native';
 import HomeScreen from '../userArea/HomeScreen';
-import Login from '../Login';
+import StoreScreen from '../userArea/StoreScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import COLORS from '../components/const/colors';
 import Icon from 'react-native-remix-icon';
@@ -87,7 +87,7 @@ const BottomNavigator = () => {
       />
       <Tab.Screen
         name="Shop"
-        component={Login}
+        component={StoreScreen}
         options={{
 			tabBarIcon: ({ focused, color, size, label }) => (
 				<>
